@@ -55,7 +55,9 @@ public class GeorgeIII : MonoBehaviour
     {
         if(collision.gameObject == Player)
         {
-            Player.GetComponent<PlayerMovement>().enabled = false;
+			SoldierSpawner.instante.DestryAll();
+			SoldierSpawner.instante.DisableSpawn();
+			Player.GetComponent<PlayerMovement>().enabled = false;
             PlayerRb.constraints = RigidbodyConstraints2D.FreezePositionX;
             Player.GetComponent<Animator>().SetBool("Walking", false);
             StopSoldiers = true;

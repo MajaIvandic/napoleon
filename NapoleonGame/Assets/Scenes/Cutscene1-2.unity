@@ -578,8 +578,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LeavingText: {fileID: 669419027}
-  IntroText: {fileID: 0}
-  ch: 269
+  text:
+  - Napoleon je na otoku bio 300 dana.
+  - "Vratio se u Pariz 26. velja\u010De 1815. godine."
+  - "Tako je po\u010Dela vladavina sto dana"
+  time: 3
 --- !u!1 &1018368558
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,9 +11,9 @@ public class SoldierMovement : MonoBehaviour
     private GameObject collObj;
     public GameObject NewCannonBall;
 
-    private bool flippedRight;
+    public bool flippedRight;
 
-    private bool flippedLeft;
+    public bool flippedLeft;
 
     Rigidbody2D rb;
 
@@ -21,6 +21,8 @@ public class SoldierMovement : MonoBehaviour
     {
         Walk();
     }
+
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         collObj = collision.gameObject;
@@ -57,11 +59,13 @@ public class SoldierMovement : MonoBehaviour
             flippedRight = false;
         }
     }
+
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(1);
         collObj.GetComponent<SpriteRenderer>().flipX = false;
     }
+
     void Walk()
     {
         if(Cannonball)
@@ -74,7 +78,8 @@ public class SoldierMovement : MonoBehaviour
         }
         Flip();
     }
-    void Flip()
+
+    public void Flip()
     {
         if (flippedLeft == true)
         {

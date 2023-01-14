@@ -91,26 +91,22 @@ public class PlayerMovement : MonoBehaviour
         {
             boat.GetComponent<Animator>().SetBool("InBoat", true);
         }
-        if (collObj.name == "Soldier")
-        { 
+        if (collObj.tag == "SoldierBody")
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        if (collObj.tag == "SoldierHead")
+        {
+            Destroy(collObj.transform.parent.gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         collObj = collision.gameObject;
-        if (collObj.name == "Soldier")
-        {
-            Destroy(collObj);
-        }
         if (collision.gameObject.name == "Logs")
         {
             collision.gameObject.SetActive(false);
             boat.SetActive(true);
-        }
-        if (collision.gameObject.name == "Spike")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 

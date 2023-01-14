@@ -7,36 +7,39 @@ using UnityEngine.SceneManagement;
 public class CutsceneText : MonoBehaviour
 {
     public TextMeshProUGUI LeavingText;
-    public TextMeshProUGUI IntroText;
 
-    public char ch;
-    private void Start()
+    public List<string> text = new List<string>();
+    public int time = 3;
+    public bool useEvent = true;
+    int index = 0;
+
+    IEnumerator TextInformations()
     {
-        if (SceneManager.GetActiveScene().name == "Cutscene1-2")
+        while (index < text.Count)
         {
-            StartCoroutine(Leaving());
+			yield return new WaitForSeconds(time);
+			LeavingText.text = text[index];
+			index++;
+		}
+
+        if(index >= text.Count)
+        {
+            OnEnterEvent();
         }
-        else
+
+	}
+
+    private void OnEnterEvent()
+    {
+        if (useEvent == true)
         {
-            StartCoroutine(Intro());
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
-    IEnumerator Leaving()
-    {
-        yield return new WaitForSeconds(2);
-        LeavingText.text = "Napoleon je na otoku bio 300 dana.";
-        yield return new WaitForSeconds(6);
-        LeavingText.text = $"Vratio se u Pariz 26. velja{ch}e 1815. godine.";
-        yield return new WaitForSeconds(6);
-        LeavingText.text = $"Tako je po{ch}ela vladavina sto dana.";
-    }
 
-    IEnumerator Intro()
+	private void Start()
     {
-        yield return new WaitForSeconds(2);
-        IntroText.text = "1814. godine Napoleon je prisiljen abdicirati te je izgnan na talijanski otok Elbu.";
-        yield return new WaitForSeconds(6);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        StartCoroutine(TextInformations());
     }
 }

@@ -8,6 +8,11 @@ TagManager:
   - Key
   - Door
   - NormalSoldier
+  - Crate
+  - GeorgeSoldier
+  - SoldierGroup
+  - SoldierHead
+  - SoldierBody
   layers:
   - Default
   - TransparentFX
