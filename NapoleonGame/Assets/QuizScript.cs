@@ -12,31 +12,29 @@ public class QuizScript : MonoBehaviour
     public string[] answers;
     public int correntAnswer;
 
-    int AnswersIndex = 4;
 
 	[Space]
 	[Space]
 	public TextMeshProUGUI _questionText;
     public GameObject _btnAnswer;
     public GameObject _parentQuestions;
+    public GameObject _NextQuestion;
 
     void Start()
     {
         DisplayQuestions();
-    }
+	}
 
 
     private void DisplayQuestions()
     {
         _questionText.text = question;
 
-        for (int i = 0; i < AnswersIndex; i++)
+        for (int i = 0; i < answers.Length; i++)
         {
-           
 			GameObject go = Instantiate(_btnAnswer, Vector3.zero, Quaternion.identity);
 			go.transform.parent = _parentQuestions.transform;
             go.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = answers[i];
-
             go.name = i.ToString();
             go.GetComponent<Button>().onClick.AddListener(() => CheckAnswer(Int32.Parse(go.name)));
 		}
@@ -48,12 +46,15 @@ public class QuizScript : MonoBehaviour
 	{
 		if(answer == correntAnswer)
         {
-            Debug.Log("Odgovor je ispravan!");
+            if (_NextQuestion == null)
+            {
+                Debug.Log("Kviz gotov.");
+            }
+            else
+            {
+                _NextQuestion.SetActive(true);
+                gameObject.SetActive(false);
+            }
         }
-        else
-        {
-            Debug.Log("Odgovor je pogrešan!");
-        }
-        AnswersIndex += 4;
 	}
 }
