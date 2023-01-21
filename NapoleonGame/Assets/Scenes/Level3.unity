@@ -531,7 +531,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1714097198}
-  - component: {fileID: 1714097197}
+  - component: {fileID: 1714097199}
   m_Layer: 0
   m_Name: 'Pitanje (1) '
   m_TagString: Untagged
@@ -539,28 +539,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1714097197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714097196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 693b5cba01c85334f969141f5df26e7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  question: "Kako se zvala napoleonova \u017Eena?"
-  answers:
-  - "\u017Dena mu se zvala Josip"
-  - "\u017Dena mu se zvala Brankica"
-  - "\u017Dena mu se zvala Jozefina"
-  - "\u017Dena mu se zvala Lucija"
-  correntAnswer: 2
-  _questionText: {fileID: 1238802770}
-  _btnAnswer: {fileID: 3102942786795530192, guid: f5fb1f846a7b5ae409afada9776f5371, type: 3}
-  _parentQuestions: {fileID: 1707785397}
 --- !u!4 &1714097198
 Transform:
   m_ObjectHideFlags: 0
@@ -577,6 +555,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714097199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714097196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1560981c1b22e7f4ba0e06c232de139b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  question: tetetete
+  answers:
+  - 4
+  - 3
+  - 2
+  - 1
+  correntAnswer: 3
+  _questionText: {fileID: 1238802770}
+  _btnAnswer: {fileID: 3102942786795530192, guid: f5fb1f846a7b5ae409afada9776f5371, type: 3}
+  _parentQuestions: {fileID: 1707785397}
 --- !u!1 &2073291097
 GameObject:
   m_ObjectHideFlags: 0
