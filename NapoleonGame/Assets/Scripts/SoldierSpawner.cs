@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class SoldierSpawner : MonoBehaviour
 {
-
-
 	private void Awake()
 	{
 		instante = this;
@@ -33,7 +31,7 @@ public class SoldierSpawner : MonoBehaviour
 	}
 
 
-	public void DestryAll()
+	public void DestroyAll()
 	{
 		foreach (GameObject soldier in listSoldiers)
 		{
@@ -42,9 +40,12 @@ public class SoldierSpawner : MonoBehaviour
 		listSoldiers.Clear();
 	}
 
-	public void DisableSpawn() => this.enabled = false;
+	public void DisableSpawn()
+	{ 
+		enabled = false;
+	}
 
-	public int SpawnTime = 5;
+	public int SpawnTime = 3;
 	public int DestroyTime = 32;
 	public static SoldierSpawner instante;
 	public GameObject soldier;

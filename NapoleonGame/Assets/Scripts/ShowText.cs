@@ -10,8 +10,9 @@ public class ShowText : MonoBehaviour
     public GameObject textObj;
     private GameObject collObj;
     public GameObject player;
+    public GameObject Wellington;
 
-    public char SoftCh;
+    public char ch;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,20 +30,29 @@ public class ShowText : MonoBehaviour
             }
             else if (name == "White key")
             {
-                text.text = $"Moja najve{SoftCh}a ljubav je \n moja prva žena Jozefina.";
+                text.text = $"Moja najve{ch}a ljubav je \n moja prva žena Jozefina.";
             }
             else if(name =="Red key")
             {
                 text.text = "Moja prva žena Jozefina je umrla dok sam ja ovdje na Elbi.";
             }
+            else if(name == "GuideTrigger")
+            {
+                text.text = $"Sko{ch}i britanskim vojnicima na glavu";
+            }
+            else if(name == "GuideTrigger2")
+            {
+                text.text = "Pazi da te vojnici ne dotaknu!";
+            }
+            textObj.SetActive(true);
+            StartCoroutine(Wait());
+
+            Destroy(this.GetComponent<BoxCollider2D>());
+            text.enabled = true;
+            textObj.SetActive(true);
+            StartCoroutine(Wait());
         }
-
-        Destroy(this.GetComponent<BoxCollider2D>());
-        text.enabled = true;
-        textObj.SetActive(true);
-        StartCoroutine(Wait());
     }
-
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(4);

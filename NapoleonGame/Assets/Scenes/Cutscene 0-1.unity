@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e72619ae38da69488210c50ec687e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeavingText: {fileID: 184539442}
+  Text: {fileID: 184539442}
   text:
   - 1814. godine Napoleon je prisiljen abdicirati te je izgnan na talijanski otok
     Elbu.

@@ -10,7 +10,6 @@ public class HangFlag : MonoBehaviour
     public GameObject Player;
     public GameObject HangingFlag;
     public GameObject SoldierSender;
-    public GameObject SoldierGroup;
 
     Rigidbody2D rb;
 
@@ -20,20 +19,13 @@ public class HangFlag : MonoBehaviour
         rb = Player.GetComponent<Rigidbody2D>();
         
     }
-    private void Update()
-    {
-        if (HangingFlag.transform.position.y == 21.39f)
-        {
-            animator.SetBool("Waving", true);
-        }
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject == Player && Player.transform.Find("Flag"))
         {
             HangingFlag.transform.position = new Vector2(-28.1f, 16.65f);
             animator.SetBool("Hanging", true);
-            Flag.SetActive(false);
+            Destroy(Flag);
 
             Player.GetComponent<PlayerMovement>().enabled = false;
             rb.constraints = RigidbodyConstraints2D.FreezePositionX;
@@ -47,5 +39,10 @@ public class HangFlag : MonoBehaviour
         yield return new WaitForSeconds(2.7f);
         SoldierSender.SetActive(true);
         SoldierSender.GetComponent<SoldierMovement>().enabled = true;
+    }
+
+    void Wave()
+    {
+            animator.SetBool("Waving", true);
     }
 }

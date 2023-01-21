@@ -93,11 +93,15 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collObj.tag == "SoldierBody")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            collObj.GetComponentInParent<SoldierMovement>().KillPlayer();
         }
         if (collObj.tag == "SoldierHead")
         {
             Destroy(collObj.transform.parent.gameObject);
+        }
+        if (collObj.name == "SoldierCatcher")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

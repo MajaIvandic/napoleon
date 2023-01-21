@@ -6,10 +6,12 @@ using UnityEngine.UI;
 
 public class SoldierMovement : MonoBehaviour
 {   
-    public GameObject Hearts;
-    public GameObject Cannonball;
     private GameObject collObj;
-    public GameObject NewCannonBall;
+
+    public GameObject Hearts;
+    public GameObject SoldierGroup;
+    public GameObject Spawn;
+    public GameObject Player;
 
     public bool flippedRight;
 
@@ -21,8 +23,6 @@ public class SoldierMovement : MonoBehaviour
     {
         Walk();
     }
-
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
         collObj = collision.gameObject;
@@ -31,29 +31,16 @@ public class SoldierMovement : MonoBehaviour
             Hearts.SetActive(true);
             rb = collObj.GetComponent<Rigidbody2D>();
             collObj.transform.position = new Vector2(-167.6f, 18.2f);
+            SoldierGroup.SetActive(true);
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             StartCoroutine(Wait());
         }
-
-        if(collObj.name == "CannonWall" && Cannonball)
-        {
-            transform.position = new Vector2(57, 16.99f);
-        }
-        if(collObj.name == "NewBallWall" && Cannonball)
-        {
-            NewCannonBall.SetActive(true);
-        }
-        if (collObj.name == "Player" && Cannonball)
-        {
-            collObj.transform.position = new Vector2(88.73f, 20.27f);
-        }
-
-        if (collObj.name == "Wall1" && name != "CannonBall")
+        if (collObj.name == "Wall1")
         {
             flippedRight = true;
             flippedLeft = false;
         }
-        else if (collObj.name == "Wall2" && name != "CannonBall")
+        else if (collObj.name == "Wall2")
         {
             flippedLeft = true;
             flippedRight = false;
@@ -68,14 +55,7 @@ public class SoldierMovement : MonoBehaviour
 
     void Walk()
     {
-        if(Cannonball)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(5f, GetComponent<Rigidbody2D>().velocity.y);
-        }
-        else
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(3, GetComponent<Rigidbody2D>().velocity.y);
-        }
+        GetComponent<Rigidbody2D>().velocity = new Vector2(3, GetComponent<Rigidbody2D>().velocity.y);
         Flip();
     }
 
@@ -90,5 +70,10 @@ public class SoldierMovement : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = true;
             GetComponent<Rigidbody2D>().velocity = new Vector2(-3,GetComponent<Rigidbody2D>().velocity.y);
         }
+    }
+
+    public void KillPlayer()
+    {
+        Player.transform.position = new Vector2(Spawn.transform.position.x,Spawn.transform.position.y);
     }
 }

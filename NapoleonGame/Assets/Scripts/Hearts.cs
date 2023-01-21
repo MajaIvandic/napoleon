@@ -44,7 +44,7 @@ public class Hearts : MonoBehaviour
         }
         else if (Lifes==0)
         {
-            SoldierSpawner.instante.DestryAll();
+            SoldierSpawner.instante.DestroyAll();
             player.transform.position = new Vector2(-170.44f, 15.699f);
             Lifes = 3;
             IsDead = true;

@@ -1229,9 +1229,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 83876237}
+  Guide: {fileID: 0}
   textObj: {fileID: 361864630}
   player: {fileID: 1599615318}
-  SoftCh: 263
+  Wellington: {fileID: 0}
+  ch: 0
 --- !u!1 &169490966
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,9 +2095,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 83876237}
+  Guide: {fileID: 0}
   textObj: {fileID: 361864630}
   player: {fileID: 1599615318}
-  SoftCh: 263
+  Wellington: {fileID: 0}
+  ch: 0
 --- !u!1 &316942559
 GameObject:
   m_ObjectHideFlags: 0
@@ -6117,9 +6121,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 83876237}
+  Guide: {fileID: 0}
   textObj: {fileID: 361864630}
   player: {fileID: 1599615318}
-  SoftCh: 263
+  Wellington: {fileID: 0}
+  ch: 0
 --- !u!61 &878465554
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7825,9 +7831,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 83876237}
+  Guide: {fileID: 0}
   textObj: {fileID: 361864630}
   player: {fileID: 1599615318}
-  SoftCh: 263
+  Wellington: {fileID: 0}
+  ch: 0
 --- !u!1 &1068761952
 GameObject:
   m_ObjectHideFlags: 0

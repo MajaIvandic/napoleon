@@ -6,19 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class CutsceneText : MonoBehaviour
 {
-    public TextMeshProUGUI LeavingText;
+    public TextMeshProUGUI Text;
 
     public List<string> text = new List<string>();
-    public int time = 3;
+    public int time = 6;
     public bool useEvent = true;
     int index = 0;
 
     IEnumerator TextInformations()
     {
+        yield return new WaitForSeconds(2);
         while (index < text.Count)
         {
-			yield return new WaitForSeconds(time);
-			LeavingText.text = text[index];
+            Text.text = text[index];
+            yield return new WaitForSeconds(time);
 			index++;
 		}
 

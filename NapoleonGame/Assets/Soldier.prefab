@@ -238,7 +238,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 594259338, guid: 5a5f339996749e44ab3d4ddcce18aa7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -306,6 +306,9 @@ MonoBehaviour:
   Hearts: {fileID: 0}
   Cannonball: {fileID: 0}
   NewCannonBall: {fileID: 0}
+  SoldierGroup: {fileID: 0}
+  flippedRight: 0
+  flippedLeft: 0
 --- !u!61 &5713642336489875055
 BoxCollider2D:
   m_ObjectHideFlags: 0
