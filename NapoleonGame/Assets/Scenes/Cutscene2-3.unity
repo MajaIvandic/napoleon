@@ -579,7 +579,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text: {fileID: 669419027}
   text:
+  - '  '
   - Napoleon je izgubio bitku i predao se Britancima.
+  - "Pora\u017Eeni Napoleon je poslan na otok Svetu Helenu."
   - "Pora\u017Eeni Napoleon je poslan na otok Svetu Helenu."
   time: 5
   useEvent: 1

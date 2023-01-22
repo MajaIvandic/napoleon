@@ -2907,10 +2907,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1df770f6bab014b839c8b4c067f53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Flag: {fileID: 0}
-  Player: {fileID: 0}
+  Flag: {fileID: 745293175}
+  Player: {fileID: 1577498004}
   HangingFlag: {fileID: 745293175}
-  SoldierSender: {fileID: 0}
+  SoldierSender: {fileID: 1391413045}
 --- !u!1 &781289499
 GameObject:
   m_ObjectHideFlags: 0
@@ -6064,7 +6064,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577498004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 149.54, y: 12.85, z: 0}
+  m_LocalPosition: {x: 147.9, y: 12.17, z: 0}
   m_LocalScale: {x: 0.2901449, y: 0.29014486, z: 0.29014486}
   m_ConstrainProportionsScale: 0
   m_Children:
