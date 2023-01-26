@@ -582,7 +582,7 @@ MonoBehaviour:
   - Napoleon je na otoku bio 300 dana.
   - "Vratio se u Pariz 26. velja\u010De 1815. godine."
   - "Tako je po\u010Dela vladavina sto dana"
-  time: 3
+  time: 6.5
   useEvent: 1
 --- !u!1 &1018368558
 GameObject:

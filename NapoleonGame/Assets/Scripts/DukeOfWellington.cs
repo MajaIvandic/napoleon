@@ -54,7 +54,7 @@ public class DukeOfWellington : MonoBehaviour
             }
             else
             {
-                Wellington.transform.position = new Vector2(-83, 15.82f);
+                Wellington.transform.position = new Vector2(-83, Wellington.transform.position.y);
                 MoveWellington();
                 WellingtonWalk = false;
 

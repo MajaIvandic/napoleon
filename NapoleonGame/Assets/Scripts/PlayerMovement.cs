@@ -9,11 +9,10 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     public GameObject SoldierSender;
+    public GameObject Questions;
 
     public GameObject boat;
     public GameObject collObj;
-
-    public GameObject GeorgeIII;
 
     float inputHorizontal;
 
@@ -65,10 +64,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        //kada se pritisne space i dodiruje pod(može sko?iti)
+        //kada se pritisne space i dodiruje pod(može skociti)
         if (Input.GetKeyDown(KeyCode.Space) && canJump == true)
         {
-            //sko?i,pokreni animaciju skoka
+            //skoci,pokreni animaciju skoka
             animator.SetBool("Jumping", true);
             canJump = false;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
@@ -77,42 +76,47 @@ public class PlayerMovement : MonoBehaviour
 
     //Kodovi za CollisionEnter2D metodu
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         collObj = collision.gameObject;
         //kada dodiruje pod tada može skociti
-        animator.SetBool("Jumping", false);
-        if (collObj.tag == "ground")
-        {
-            canJump = true;
-
-        }
         if (collObj.name == "BoatWall")
         {
             boat.GetComponent<Animator>().SetBool("InBoat", true);
-        }
-        if (collObj.tag == "SoldierBody")
-        {
-            collObj.GetComponentInParent<SoldierMovement>().KillPlayer();
-        }
-        if (collObj.tag == "SoldierHead")
-        {
-            Destroy(collObj.transform.parent.gameObject);
         }
         if (collObj.name == "SoldierCatcher")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        collObj = collision.gameObject;
-        if (collision.gameObject.name == "Logs")
+        if (collObj.name == "Logs")
         {
-            collision.gameObject.SetActive(false);
+            collObj.SetActive(false);
             boat.SetActive(true);
+        }
+        if(collObj.name == "Book")
+        {
+            Questions.SetActive(true);
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+        if (collObj.tag == "SoldierHead")
+        {
+            Debug.Log("head");
+            Destroy(collObj.transform.parent.gameObject);
+        }
+        else if (collObj.tag == "SoldierBody")
+        {
+            Debug.Log("body");
+            collObj.GetComponentInParent<SoldierMovement>().KillPlayer();
         }
     }
 
-
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        collObj = collision.gameObject;
+        if (collObj.CompareTag("ground"))
+        {
+            canJump = true;
+            animator.SetBool("Jumping", false);
+        }
+    }
 }

@@ -75,5 +75,6 @@ public class SoldierMovement : MonoBehaviour
     public void KillPlayer()
     {
         Player.transform.position = new Vector2(Spawn.transform.position.x,Spawn.transform.position.y);
+        Debug.Log("Soldiered");
     }
 }

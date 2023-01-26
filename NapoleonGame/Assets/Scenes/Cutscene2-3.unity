@@ -463,7 +463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -425, y: 450}
+  m_AnchoredPosition: {x: -341, y: 414}
   m_SizeDelta: {x: 183.9885, y: 48.1754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669419027
@@ -486,9 +486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -551,7 +549,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -807.20276, w: -46.930298}
+  m_margin: {x: 0, y: 0, z: -672.3063, w: -46.930298}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -579,11 +577,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text: {fileID: 669419027}
   text:
-  - '  '
-  - Napoleon je izgubio bitku i predao se Britancima.
+  - Napoleon je izgubio bitku kod Waterlooa.
   - "Pora\u017Eeni Napoleon je poslan na otok Svetu Helenu."
-  - "Pora\u017Eeni Napoleon je poslan na otok Svetu Helenu."
-  time: 5
+  time: 6
   useEvent: 1
 --- !u!1 &1018368558
 GameObject:
@@ -620,8 +616,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.133831, y: 394.1242}
-  m_SizeDelta: {x: 1296.9937, y: 255.6577}
+  m_AnchoredPosition: {x: 0.000015259, y: 370.06213}
+  m_SizeDelta: {x: 1786.0029, y: 433.4792}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1018368560
 MonoBehaviour:
@@ -643,7 +639,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b65c136322376904da8383c6bbf64db4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 10dea0347e4c428418a245b1622cf1e0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -975,7 +971,7 @@ Animator:
   m_GameObject: {fileID: 1854097590}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5291548159beda040b8481a5af1d11ce, type: 2}
+  m_Controller: {fileID: 9100000, guid: 02fbaf5f99d89eb45b8edf0573a3a6c0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

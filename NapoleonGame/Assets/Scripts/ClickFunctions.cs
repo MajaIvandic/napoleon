@@ -17,7 +17,7 @@ public class ClickFunctions : MonoBehaviour
         //ako predmet ima tag "Door" pokreni funkciju
         if (collObj.tag == "Door")
         {
-            openDoor();
+            OpenDoor();
         }
 
         //ako predmet ima tag "Key" pokreni funkcije
@@ -27,7 +27,7 @@ public class ClickFunctions : MonoBehaviour
             collObj.transform.SetParent(player.transform);
             collObj.transform.eulerAngles = new Vector3(0, 0, -88.017f);
 
-            keySize();
+            KeySize();
         }
 
         //ako se predmet zove "Axe" namjesti sjekiru na igracsa
@@ -40,7 +40,7 @@ public class ClickFunctions : MonoBehaviour
         }
         
     }
-    void keySize()
+    void KeySize()
     {
         //namještavanje pozicije svakog kljuca na igraca
         if (collObj.name == "Blue key")
@@ -56,7 +56,7 @@ public class ClickFunctions : MonoBehaviour
             collObj.transform.position = new Vector2(player.transform.position.x + .66f, player.transform.position.y - 1.1f);
         }
     }
-    void openDoor()
+    void OpenDoor()
     {
         //oznacavanje pozicije gdje ce se igrac pojaviti kad prode kroz vrata
         if (player.transform.position.x > -35f)
@@ -65,13 +65,7 @@ public class ClickFunctions : MonoBehaviour
         }
         else
         {
-            player.transform.position = new Vector3(-23.6f, -2.6f, 0);
+            player.transform.position = new Vector3(-22.21f, -2.6f, 0);
         }
     }
-
-    void NextScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
 }

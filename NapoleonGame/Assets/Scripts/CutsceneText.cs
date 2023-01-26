@@ -9,7 +9,7 @@ public class CutsceneText : MonoBehaviour
     public TextMeshProUGUI Text;
 
     public List<string> text = new List<string>();
-    public int time = 6;
+    public float time = 6;
     public bool useEvent = true;
     int index = 0;
 
@@ -30,7 +30,7 @@ public class CutsceneText : MonoBehaviour
 
 	}
 
-    private void OnEnterEvent()
+    public void OnEnterEvent()
     {
         if (useEvent == true)
         {

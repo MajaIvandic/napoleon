@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscene2-3.unity
     guid: 3e296a702d999e5489ea6d5966a39e1b
   - enabled: 1
-    path: Assets/Scenes/Elba-Level3.unity
+    path: Assets/Scenes/Level3.unity
     guid: 22a75fa6e84ed6446b3bb49769ba5d6e
   - enabled: 1
     path: Assets/Scenes/Quiz-Level3Ending.unity
