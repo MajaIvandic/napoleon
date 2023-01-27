@@ -13379,7 +13379,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -3
   m_Sprite: {fileID: -774084622, guid: 49b35cb46e5d3e04f8d6ef76044adb8b, type: 3}
-  m_Color: {r: 0.24528301, g: 0.24219768, b: 0.24219768, a: 0.69803923}
+  m_Color: {r: 0.11320752, g: 0.11178352, b: 0.11178352, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -15551,9 +15551,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SoldierSender: {fileID: 0}
+  Questions: {fileID: 0}
   boat: {fileID: 1582478226}
   collObj: {fileID: 0}
-  GeorgeIII: {fileID: 0}
   speed: 6.5
   jumpForce: 5
 --- !u!1 &1651034127
