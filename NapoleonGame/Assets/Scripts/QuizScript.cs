@@ -14,7 +14,6 @@ public class QuizScript : MonoBehaviour
     public int correctAnswer;
     public char ch;
     bool takePoints = true;
-    int points = 10;
 
     [Space]
     [Space]
@@ -53,18 +52,24 @@ public class QuizScript : MonoBehaviour
         }
         if (answer == correctAnswer)
         {
+            if (_NextQuestion != null)
+            {
                 StartCoroutine(NextQuestion());
+            }
                 takePoints = false;
 
         }
         else
         {
-            if (this != questionObject && takePoints == true)
+            if (takePoints == true)
             {
                 takePoints = false;
-                questionObject.GetComponent<QuizScript>().points--;
-                Debug.Log(questionObject.GetComponent<QuizScript>().points);
-                StartCoroutine(NextQuestion());
+                questionObject.GetComponent<Points>().points--;
+                Debug.Log(questionObject.GetComponent<Points>().points);
+                if (_NextQuestion != null)
+                {
+                    StartCoroutine(NextQuestion());
+                }
             }
         }
     }
@@ -80,22 +85,22 @@ public class QuizScript : MonoBehaviour
     IEnumerator QuizOver()
     {
         yield return new WaitForSeconds(2);
+        pointShow.SetActive(true);
+        gameObject.SetActive(false);
         TextMeshProUGUI comment = pointShow.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-        pointShow.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = $"{questionObject.GetComponent<QuizScript>().points}/10";
-        if(questionObject.GetComponent<QuizScript>().points >= 8)
+        pointShow.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = $"{questionObject.GetComponent<Points>().points}/10";
+        if(questionObject.GetComponent<Points>().points >= 8)
         {
            comment.text = $"Bravo! Odli{ch}no poznaješ Napoleona!";
         }
-        else if(questionObject.GetComponent<QuizScript>().points >= 5)
+        else if(questionObject.GetComponent<Points>().points >= 5)
         {
             comment.text = "Dobro poznaješ Napoleona!";
         }
-        else if(questionObject.GetComponent<QuizScript>().points < 5)
+        else if(questionObject.GetComponent<Points>().points < 5)
         {
             comment.text = "O ne! Ne poznaješ dobro Napoleona!";
         }
-        pointShow.SetActive(true);
-        gameObject.SetActive(false);
     }
 
     public void ChangeColors(Button button)
