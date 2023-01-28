@@ -15,15 +15,15 @@ public class ClickFunctions : MonoBehaviour
         collObj = collision.gameObject;
 
         //ako predmet ima tag "Door" pokreni funkciju
-        if (collObj.tag == "Door")
+        if (collObj.CompareTag("Door"))
         {
             OpenDoor();
         }
 
         //ako predmet ima tag "Key" pokreni funkcije
-        if (collObj.tag == "Key")
+        if (collObj.CompareTag("Key"))
         {
-            //namjesti klju? na igra?a
+            //namjesti kljuc na igraca
             collObj.transform.SetParent(player.transform);
             collObj.transform.eulerAngles = new Vector3(0, 0, -88.017f);
 
@@ -67,5 +67,10 @@ public class ClickFunctions : MonoBehaviour
         {
             player.transform.position = new Vector3(-22.21f, -2.6f, 0);
         }
+    }
+
+    public void NextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

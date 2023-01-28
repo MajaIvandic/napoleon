@@ -26,14 +26,21 @@ public class SoldierMovement : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         collObj = collision.gameObject;
-        if (collObj.name == "Player" && name == "SoldierSender")
+        if (collObj.name == "Player")
         {
-            Hearts.SetActive(true);
+            if (name == "SoldierSender")
+            { 
+                Hearts.SetActive(true);
             rb = collObj.GetComponent<Rigidbody2D>();
             collObj.transform.position = new Vector2(-167.6f, 18.2f);
             SoldierGroup.SetActive(true);
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             StartCoroutine(Wait());
+        }
+            else if(name =="SoldierCatcher")
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
         if (collObj.name == "Wall1")
         {
@@ -75,6 +82,5 @@ public class SoldierMovement : MonoBehaviour
     public void KillPlayer()
     {
         Player.transform.position = new Vector2(Spawn.transform.position.x,Spawn.transform.position.y);
-        Debug.Log("Soldiered");
     }
 }

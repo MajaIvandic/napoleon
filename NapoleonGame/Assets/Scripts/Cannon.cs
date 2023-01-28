@@ -22,7 +22,7 @@ public class Cannon : MonoBehaviour
         }
         if (collObj.name == "CannonWall")
         {
-            Cannonball.transform.position = new Vector2(57, 16.99f);
+            Cannonball.transform.position = new Vector2(57, Cannonball.transform.position.y);
         }
         if (collObj.name == "NewBallWall")
         {

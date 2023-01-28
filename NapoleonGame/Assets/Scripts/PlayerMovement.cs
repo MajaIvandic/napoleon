@@ -79,11 +79,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         collObj = collision.gameObject;
-        //kada dodiruje pod tada može skociti
-        if (collObj.name == "BoatWall")
-        {
-            boat.GetComponent<Animator>().SetBool("InBoat", true);
-        }
         if (collObj.name == "SoldierCatcher")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

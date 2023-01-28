@@ -26,7 +26,9 @@ public class SitInBoat : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezePosition;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-            camera.transform.SetParent(this.transform);
+            boat.GetComponent<Animator>().SetBool("InBoat", true);
+
+            camera.transform.SetParent(transform);
             rb.bodyType = RigidbodyType2D.Static;
         }
     }
