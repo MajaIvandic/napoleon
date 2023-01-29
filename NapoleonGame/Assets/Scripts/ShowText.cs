@@ -19,14 +19,14 @@ public class ShowText : MonoBehaviour
     {
         collObj = collision.gameObject;
         if (collObj == player)
-        {
+        {   
+            if(CompareTag("Key"))
+            {
+                GetComponent<AudioSource>().Play();
+            }
             if (name == "Blue key")
             {
                 text.text = "Marija Lujza je rodila mog jedinog sina - Napoleona II.";
-            }
-            else if (name == "Photo")
-            {
-                text.text = "Ovo je moja druga supruga Marija Lujza.";
             }
             else if (name == "White key")
             {
@@ -35,6 +35,10 @@ public class ShowText : MonoBehaviour
             else if(name =="Red key")
             {
                 text.text = "Moja prva žena Jozefina je umrla dok sam ja ovdje na Elbi.";
+            }
+            else if (name == "Photo")
+            {
+                text.text = "Ovo je moja druga supruga Marija Lujza.";
             }
             else if(name == "GuideTrigger")
             {

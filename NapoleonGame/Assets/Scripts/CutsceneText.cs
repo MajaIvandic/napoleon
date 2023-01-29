@@ -8,6 +8,8 @@ public class CutsceneText : MonoBehaviour
 {
     public TextMeshProUGUI Text;
 
+    public GameObject End;
+
     public List<string> text = new List<string>();
     public float time = 6;
     public bool useEvent = true;
@@ -25,6 +27,7 @@ public class CutsceneText : MonoBehaviour
 
         if(index >= text.Count)
         {
+            yield return new WaitForSeconds(1);
             OnEnterEvent();
         }
 
@@ -34,6 +37,10 @@ public class CutsceneText : MonoBehaviour
     {
         if (useEvent == true)
         {
+            if(End != null)
+            {
+                End.SetActive(true);
+            }
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

@@ -42,7 +42,9 @@ public class ChopTree : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.Space))
             {
-                if(breaking1.enabled == true)
+                GetComponent<AudioSource>().Play();
+                GetComponent<AudioSource>().pitch = (Random.Range(1f, 2f));
+                if (breaking1.enabled == true)
                 {
                     breaking2.enabled = true;
                     breaking1.enabled = false;
@@ -62,7 +64,7 @@ public class ChopTree : MonoBehaviour
     void chopped()
     {
         chopping.SetActive(false);
-        this.GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
         Logs.SetActive(true);
 
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;

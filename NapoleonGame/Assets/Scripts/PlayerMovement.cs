@@ -54,6 +54,14 @@ public class PlayerMovement : MonoBehaviour
         //ako hoda pokreni animaciju hodanja
         if (inputHorizontal != 0)
         {
+            if(transform.position.x > -35f)
+            {
+                transform.GetChild(1).GetComponent<AudioSource>().Play();
+            }
+            else
+            {
+                transform.GetChild(2).GetComponent<AudioSource>().Play();
+            }
             animator.SetBool("Walking", true);
         }
         else
@@ -85,8 +93,10 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collObj.name == "Logs")
         {
+
             collObj.SetActive(false);
             boat.SetActive(true);
+            boat.GetComponent<AudioSource>().Play();
         }
         if(collObj.name == "Book")
         {

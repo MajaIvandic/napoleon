@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet(3)_0
+      name: Waving Flag_0
       rect:
         serializedVersion: 2
         x: 232
@@ -112,35 +112,35 @@ TextureImporter:
         width: 348
         height: 435
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd3867f5fa65a234583a11aae3d7bb85
-      internalID: 1540525060
+      spriteID: c7ab9a5f86b6b724c89fa9ec0a4d4bec
+      internalID: -776741416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixilart Sprite Sheet(3)_1
+      name: Waving Flag_1
       rect:
         serializedVersion: 2
-        x: 1245
+        x: 1247
         y: 377
         width: 348
         height: 435
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c702db9e6dbcc4b4aa3e72f37f8a5d2d
-      internalID: -1414461201
+      spriteID: 1c4f46cc802664e43a286ef797a69aed
+      internalID: 1261998915
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Pixilart Sprite Sheet(3)_1: -1414461201
-      Pixilart Sprite Sheet(3)_0: 1540525060
+      Waving Flag_0: -776741416
+      Waving Flag_1: 1261998915
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
