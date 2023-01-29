@@ -10,9 +10,11 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject SoldierSender;
     public GameObject Questions;
-
     public GameObject boat;
-    public GameObject collObj;
+    GameObject collObj;
+
+    public GameObject GrassFootsteps;
+    public GameObject WoodFootsteps;
 
     float inputHorizontal;
 
@@ -54,18 +56,24 @@ public class PlayerMovement : MonoBehaviour
         //ako hoda pokreni animaciju hodanja
         if (inputHorizontal != 0)
         {
-            if(transform.position.x > -35f)
-            {
-                transform.GetChild(1).GetComponent<AudioSource>().Play();
-            }
-            else
-            {
-                transform.GetChild(2).GetComponent<AudioSource>().Play();
-            }
+            
             animator.SetBool("Walking", true);
         }
         else
         {
+            if (canJump == true)
+            {
+                //if (transform.position.x > -35)
+                //{
+                //    GrassFootsteps.GetComponent<AudioSource>().Play();
+                //    WoodFootsteps.GetComponent<AudioSource>().Stop();
+                //}
+                //else
+                //{
+                //    WoodFootsteps.GetComponent<AudioSource>().Play();
+                //    GrassFootsteps.GetComponent<AudioSource>().Stop();
+                //}
+            }
             animator.SetBool("Walking", false);
         }
     }

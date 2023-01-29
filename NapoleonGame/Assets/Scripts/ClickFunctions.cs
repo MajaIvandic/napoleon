@@ -61,10 +61,14 @@ public class ClickFunctions : MonoBehaviour
         //oznacavanje pozicije gdje ce se igrac pojaviti kad prode kroz vrata
         if (player.transform.position.x > -35f)
         {
+            player.transform.GetChild(1).GetComponent<AudioSource>().Stop();
+            player.transform.GetChild(2).GetComponent<AudioSource>().Play();
             player.transform.position = new Vector3(-58, -2.69f, 0);
         }
         else
         {
+            player.transform.GetChild(2).GetComponent<AudioSource>().Stop();
+            player.transform.GetChild(1).GetComponent<AudioSource>().Play();
             player.transform.position = new Vector3(-22.21f, -2.6f, 0);
         }
     }
