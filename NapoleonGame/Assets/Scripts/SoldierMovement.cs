@@ -12,6 +12,7 @@ public class SoldierMovement : MonoBehaviour
     public GameObject SoldierGroup;
     public GameObject Spawn;
     public GameObject Player;
+    public GameObject Huh;
 
     public bool flippedRight;
 
@@ -35,6 +36,7 @@ public class SoldierMovement : MonoBehaviour
             collObj.transform.position = new Vector2(-167.6f, 18.2f);
             SoldierGroup.SetActive(true);
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+                Destroy(this);
             StartCoroutine(Wait());
         }
             else if(name =="SoldierCatcher")
@@ -58,6 +60,7 @@ public class SoldierMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         collObj.GetComponent<SpriteRenderer>().flipX = false;
+
     }
 
     void Walk()

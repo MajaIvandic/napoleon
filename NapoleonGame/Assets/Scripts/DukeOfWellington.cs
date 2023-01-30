@@ -9,6 +9,7 @@ public class DukeOfWellington : MonoBehaviour
     public GameObject Wellington;
     public GameObject Player;
     public GameObject SecretWall;
+    public GameObject Sounds;
 
     public GameObject SoldierCatcher;
 
@@ -134,12 +135,13 @@ public class DukeOfWellington : MonoBehaviour
     {
         if (napoleonturn == true)
         {
+            Sounds.transform.Find("NapoleonTalk").GetComponent<AudioSource>().Play();
             NapoleonText.transform.parent.gameObject.SetActive(true);
             WellingtonText.transform.parent.gameObject.SetActive(false);
         }
-        else
-              if (napoleonturn == false)
+        else if (napoleonturn == false)
         {
+            Sounds.transform.Find("WellingtonTalk").GetComponent<AudioSource>().Play();
             NapoleonText.transform.parent.gameObject.SetActive(false);
             WellingtonText.transform.parent.gameObject.SetActive(true);
         }

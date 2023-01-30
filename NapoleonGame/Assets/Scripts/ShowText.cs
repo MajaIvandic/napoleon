@@ -11,8 +11,16 @@ public class ShowText : MonoBehaviour
     private GameObject collObj;
     public GameObject player;
     public GameObject Wellington;
+    public GameObject Sounds;
 
     public char ch;
+
+    AudioSource Mumbling;
+
+    private void Start()
+    {
+        Mumbling = Sounds.transform.Find("MumblingSound").GetComponent<AudioSource>();
+    }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,18 +34,22 @@ public class ShowText : MonoBehaviour
             }
             if (name == "Blue key")
             {
+                Mumbling.Play();
                 text.text = "Marija Lujza je rodila mog jedinog sina - Napoleona II.";
             }
             else if (name == "White key")
             {
+                Mumbling.Play();
                 text.text = $"Moja najve{ch}a ljubav je \n moja prva žena Jozefina.";
             }
             else if(name =="Red key")
             {
+                Mumbling.Play();
                 text.text = "Moja prva žena Jozefina je umrla dok sam ja ovdje na Elbi.";
             }
             else if (name == "Photo")
             {
+                Mumbling.Play();
                 text.text = "Ovo je moja druga supruga Marija Lujza.";
             }
             else if(name == "GuideTrigger")
