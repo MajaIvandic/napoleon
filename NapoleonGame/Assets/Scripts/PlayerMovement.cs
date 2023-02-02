@@ -11,10 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject SoldierSender;
     public GameObject Questions;
     public GameObject boat;
+    public GameObject Sounds;
     GameObject collObj;
-
-    public GameObject GrassFootsteps;
-    public GameObject WoodFootsteps;
 
     float inputHorizontal;
 
@@ -56,24 +54,10 @@ public class PlayerMovement : MonoBehaviour
         //ako hoda pokreni animaciju hodanja
         if (inputHorizontal != 0)
         {
-            
             animator.SetBool("Walking", true);
         }
         else
         {
-            if (canJump == true)
-            {
-                //if (transform.position.x > -35)
-                //{
-                //    GrassFootsteps.GetComponent<AudioSource>().Play();
-                //    WoodFootsteps.GetComponent<AudioSource>().Stop();
-                //}
-                //else
-                //{
-                //    WoodFootsteps.GetComponent<AudioSource>().Play();
-                //    GrassFootsteps.GetComponent<AudioSource>().Stop();
-                //}
-            }
             animator.SetBool("Walking", false);
         }
     }
@@ -109,16 +93,17 @@ public class PlayerMovement : MonoBehaviour
         if(collObj.name == "Book")
         {
             Questions.SetActive(true);
+            Sounds.GetComponent<AudioSource>().Play();
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
-        if (collObj.tag == "SoldierHead")
+        if (collObj.CompareTag("SoldierHead"))
         {
-            Debug.Log("head");
+            Sounds.transform.Find("Splat").GetComponent<AudioSource>().Play();
             Destroy(collObj.transform.parent.gameObject);
         }
-        else if (collObj.tag == "SoldierBody")
+        else if (collObj.CompareTag("SoldierBody"))
         {
-            Debug.Log("body");
+            Sounds.transform.Find("Hurt").GetComponent<AudioSource>().Play();
             collObj.GetComponentInParent<SoldierMovement>().KillPlayer();
         }
     }

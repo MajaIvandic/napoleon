@@ -52,6 +52,7 @@ public class QuizScript : MonoBehaviour
         }
         if (answer == correctAnswer)
         {
+            questionObject.transform.Find("Correct").GetComponent<AudioSource>().Play();
             if (_NextQuestion != null)
             {
                 StartCoroutine(NextQuestion());
@@ -61,6 +62,7 @@ public class QuizScript : MonoBehaviour
         }
         else
         {
+            questionObject.transform.Find("Wrong").GetComponent<AudioSource>().Play();
             if (takePoints == true)
             {
                 takePoints = false;
@@ -85,6 +87,7 @@ public class QuizScript : MonoBehaviour
     IEnumerator QuizOver()
     {
         yield return new WaitForSeconds(2);
+        questionObject.transform.Find("Over").GetComponent<AudioSource>().Play();
         pointShow.SetActive(true);
         gameObject.SetActive(false);
         TextMeshProUGUI comment = pointShow.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();

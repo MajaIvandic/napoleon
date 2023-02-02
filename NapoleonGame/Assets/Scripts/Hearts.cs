@@ -11,6 +11,8 @@ public class Hearts : MonoBehaviour
     public Image Heart2;
     public Image Heart3;
 
+    public GameObject Sounds;
+
     int Lifes = 3;
     public bool IsDead;
     private void Update()
@@ -44,6 +46,7 @@ public class Hearts : MonoBehaviour
         }
         else if (Lifes==0)
         {
+            Sounds.transform.Find("Hurt").GetComponent<AudioSource>().Play();
             SoldierSpawner.instante.DestroyAll();
             player.transform.position = new Vector2(-170.44f, 15.699f);
             Lifes = 3;

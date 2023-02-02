@@ -51,7 +51,7 @@ public class ChopTree : MonoBehaviour
                 }
                 else if(breaking2.enabled == true)
                 {
-                    chopped();
+                    Chopped();
                 }
                 else
                 {
@@ -61,8 +61,9 @@ public class ChopTree : MonoBehaviour
         }        
     }
 
-    void chopped()
+    void Chopped()
     {
+        transform.Find("Stump").GetComponent<AudioSource>().Play();
         chopping.SetActive(false);
         GetComponent<SpriteRenderer>().enabled = false;
         Logs.SetActive(true);

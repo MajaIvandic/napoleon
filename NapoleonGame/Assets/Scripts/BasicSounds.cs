@@ -4,34 +4,32 @@ using UnityEngine;
 
 public class BasicSounds : MonoBehaviour
 {
-    //Deklariranje
-
     public GameObject Player;
 
     AudioSource StartMusic;
-    AudioSource SecondSound;
+    AudioSource SecondMusic;
 
     void Start()
     {
-        SecondSound = transform.Find("SecondSound").GetComponent<AudioSource>();
-        StartMusic = transform.Find("StartMusic").GetComponent<AudioSource>();
+        SecondMusic = transform.Find("SecondMusic").GetComponent<AudioSource>();
+        StartMusic = transform.Find("MainMusic").GetComponent<AudioSource>();
     }
 
     void Update()
     {
         //Ako je x pozicija igraca manja od -56...
-        if (Player.transform.position.x < -52.79f)
+        if (Player.transform.position.x > -52.79f)
         {
             //Utisaj StartMusic, pojacaj CastleMusic
-            StartMusic.mute = true;
-            SecondSound.mute = false;
+            StartMusic.mute = false;
+            SecondMusic.mute = true;
         }
         //Inace...
         else
         {
             //Utisaj CastleMusic, pojacaj StartMusic
-            StartMusic.mute = false;
-            SecondSound.mute = true;
+            SecondMusic.mute = false;
+            StartMusic.mute = true;
         }
     }
 }

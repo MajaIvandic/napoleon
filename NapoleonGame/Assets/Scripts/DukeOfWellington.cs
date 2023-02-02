@@ -56,6 +56,7 @@ public class DukeOfWellington : MonoBehaviour
             else
             {
                 Wellington.transform.position = new Vector2(-83, Wellington.transform.position.y);
+                Sounds.transform.Find("SecondMusic").GetComponent<AudioSource>().volume = 0.5f;
                 MoveWellington();
                 WellingtonWalk = false;
 
@@ -133,6 +134,7 @@ public class DukeOfWellington : MonoBehaviour
 
     void Turns()
     {
+        Sounds.transform.Find("SecondMusic").GetComponent<AudioSource>().volume = 0.25f;
         if (napoleonturn == true)
         {
             Sounds.transform.Find("NapoleonTalk").GetComponent<AudioSource>().Play();

@@ -13,6 +13,7 @@ public class SoldierMovement : MonoBehaviour
     public GameObject Spawn;
     public GameObject Player;
     public GameObject Huh;
+    public Image Black;
 
     public bool flippedRight;
 
@@ -27,20 +28,20 @@ public class SoldierMovement : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         collObj = collision.gameObject;
-        if (collObj.name == "Player")
+        if (collObj == Player)
         {
             if (name == "SoldierSender")
             { 
-                Hearts.SetActive(true);
+            Hearts.SetActive(true);
             rb = collObj.GetComponent<Rigidbody2D>();
             collObj.transform.position = new Vector2(-167.6f, 18.2f);
             SoldierGroup.SetActive(true);
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-                Destroy(this);
             StartCoroutine(Wait());
         }
             else if(name =="SoldierCatcher")
             {
+                Black.enabled = true;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
@@ -59,10 +60,8 @@ public class SoldierMovement : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(1);
-        collObj.GetComponent<SpriteRenderer>().flipX = false;
-
+        Player.GetComponent<SpriteRenderer>().flipX = false;
     }
-
     void Walk()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(3, GetComponent<Rigidbody2D>().velocity.y);

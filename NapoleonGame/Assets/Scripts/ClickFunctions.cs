@@ -33,6 +33,7 @@ public class ClickFunctions : MonoBehaviour
         //ako se predmet zove "Axe" namjesti sjekiru na igracsa
         if (collObj.name == "Axe")
         {
+            collObj.GetComponent<AudioSource>().Play();
             collObj.transform.SetParent(player.transform);
             collObj.transform.position = new Vector3(player.transform.position.x - .33f, player.transform.position.y - .6f);
             collObj.GetComponent<SpriteRenderer>().sortingOrder = 3;
@@ -61,14 +62,10 @@ public class ClickFunctions : MonoBehaviour
         //oznacavanje pozicije gdje ce se igrac pojaviti kad prode kroz vrata
         if (player.transform.position.x > -35f)
         {
-            player.transform.GetChild(1).GetComponent<AudioSource>().Stop();
-            player.transform.GetChild(2).GetComponent<AudioSource>().Play();
             player.transform.position = new Vector3(-58, -2.69f, 0);
         }
         else
         {
-            player.transform.GetChild(2).GetComponent<AudioSource>().Stop();
-            player.transform.GetChild(1).GetComponent<AudioSource>().Play();
             player.transform.position = new Vector3(-22.21f, -2.6f, 0);
         }
     }

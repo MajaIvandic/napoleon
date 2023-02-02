@@ -9,12 +9,17 @@ public class CutsceneText : MonoBehaviour
     public TextMeshProUGUI Text;
 
     public GameObject End;
+    public GameObject Sounds;
 
     public List<string> text = new List<string>();
     public float time = 6;
     public bool useEvent = true;
     int index = 0;
 
+    private void Start()
+    {
+        StartCoroutine(TextInformations());
+    }
     IEnumerator TextInformations()
     {
         yield return new WaitForSeconds(2);
@@ -40,14 +45,16 @@ public class CutsceneText : MonoBehaviour
             if(End != null)
             {
                 End.SetActive(true);
+                StartCoroutine(EndGame());
             }
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
-
-	private void Start()
+    IEnumerator EndGame()
     {
-        StartCoroutine(TextInformations());
+        yield return new WaitForSeconds(6);
+        SceneManager.LoadScene(0);
     }
+
 }

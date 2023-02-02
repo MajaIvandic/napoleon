@@ -19,7 +19,7 @@ public class ShowText : MonoBehaviour
 
     private void Start()
     {
-        Mumbling = Sounds.transform.Find("MumblingSound").GetComponent<AudioSource>();
+        Mumbling = Sounds.transform.Find("NapoleonTalk").GetComponent<AudioSource>();
     }
 
 

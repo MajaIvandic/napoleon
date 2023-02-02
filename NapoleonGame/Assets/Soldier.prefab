@@ -147,6 +147,8 @@ MonoBehaviour:
   SoldierGroup: {fileID: 0}
   Spawn: {fileID: 0}
   Player: {fileID: 0}
+  Huh: {fileID: 0}
+  Black: {fileID: 0}
   flippedRight: 0
   flippedLeft: 0
 --- !u!61 &5713642336489875055
@@ -162,7 +164,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.23415291, y: 0.93489236}
+  m_Offset: {x: 0.027775407, y: 1.7017828}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -173,7 +175,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7813013, y: 2.505443}
+  m_Size: {x: 3.1449544, y: 4.0392237}
   m_EdgeRadius: 0
 --- !u!1 &8377001787333700688
 GameObject:

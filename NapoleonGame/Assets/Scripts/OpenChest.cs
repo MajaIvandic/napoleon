@@ -17,6 +17,8 @@ public class OpenChest : MonoBehaviour
     public GameObject whiteKey;
     public GameObject redKey;
 
+    public GameObject Sounds;
+
     Animator animator;
 
     private void Start()
@@ -35,16 +37,19 @@ public class OpenChest : MonoBehaviour
         //ako igra? ima klju? neke boje otvori bravu te boje
         if(collObj.transform.Find("Blue key"))
         {
+            Sounds.transform.Find("UnlockLock").GetComponent<AudioSource>().Play();
             Destroy(blueLock);
             Destroy(blueKey);
         }
         if (collObj.transform.Find("White key"))
         {
+            Sounds.transform.Find("UnlockLock").GetComponent<AudioSource>().Play();
             Destroy(whiteLock);
             Destroy(whiteKey);
         }
         if (collObj.transform.Find("Red key"))
         {
+            Sounds.transform.Find("UnlockLock").GetComponent<AudioSource>().Play();
             Destroy(redLock);
             Destroy(redKey);
         }
@@ -56,6 +61,7 @@ public class OpenChest : MonoBehaviour
         if (!blueLock && !whiteLock && !redLock)
         {
             //otvori sanduk, prikaži sjekiru
+            GetComponent<AudioSource>().Play();
             animator.SetBool("Opened", true);
             Axe.GetComponent<SpriteRenderer>().enabled = true;
             Axe.GetComponent<BoxCollider2D>().enabled = true;
